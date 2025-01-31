@@ -12,11 +12,12 @@ class DashboardController extends Controller
     {
         $totalUsers = User::count();
 
-        $allSessions = Session::all(); 
-
-        $loggedInUsers = collect($allSessions)->keys()->filter(function ($key) {
-            return strpos($key, 'user_online_') === 0;
-        })->count();
+        $loggedInUsers = 0;
+        foreach (Session::all() as $key => $value) {
+            if (strpos($key, 'user_online_') === 0) {
+                $loggedInUsers++;
+            }
+        }
 
         return view('dashboard', compact('totalUsers', 'loggedInUsers'));
     }

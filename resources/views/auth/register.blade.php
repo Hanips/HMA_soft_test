@@ -16,6 +16,12 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <div class="mt-4">
+            <x-input-label for="telp" :value="__('Nomor Telfon')" />
+            <x-text-input id="telp" class="block mt-1 w-full" type="telp" name="telp" :value="old('telp')" autocomplete="username" />
+            <x-input-error :messages="$errors->get('telp')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />

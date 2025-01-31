@@ -14,6 +14,7 @@
             <tr>
                 <th>Nama</th>
                 <th>Email</th>
+                <th>Telp</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <tr>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->telp }}</td>
                     <td>
                         <a href="{{ route('users.edit', $user) }}" class="btn btn-warning">Edit</a>
                         <form action="{{ route('users.destroy', $user) }}" method="POST" style="display:inline;">

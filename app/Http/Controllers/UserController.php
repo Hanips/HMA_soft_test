@@ -24,12 +24,14 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'telp' => 'nullable|unique:users',
             'password' => 'required|min:6',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'telp' => $request->telp,
             'password' => Hash::make($request->password),
         ]);
 
@@ -45,6 +47,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'telp' => 'nullable|unique:users',
             'email' => 'required|email|unique:users,email,' . $user->id,
         ]);
 

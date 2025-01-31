@@ -14,6 +14,10 @@
             <label>Email</label>
             <input type="email" name="email" class="form-control" value="{{ $user->email }}" required>
         </div>
+        <div class="mb-3">
+            <label>telp</label>
+            <input type="telp" name="telp" class="form-control" value="{{ $user->telp }}" required>
+        </div>
         <button type="submit" class="btn btn-success">Update</button>
     </form>
 </div>

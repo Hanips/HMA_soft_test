@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
-        Session::put('user_online_' . $user->id, true);
+        session()->increment('user_online_count', 1);
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
